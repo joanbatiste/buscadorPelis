@@ -1,11 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
 #pelis {
-    width: 55rem;
+    width: 50rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(10, 1fr);
     grid-gap: 1em;
 }
-
+#showSelection {
+    width: 50rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
+    
+    background-color: gray;
+}
 #pelis img{
     width: 100%;
 }
