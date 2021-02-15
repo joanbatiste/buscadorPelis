@@ -6,21 +6,18 @@ body {
 }
 
 
-#pelis {
-    width: 50rem;
+.Peliculas {
+    width: 50em;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(10, 1fr);
     grid-gap: 1em;
 }
-#showSelection {
-    width: 50rem;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 1em;
-    
-    background-color: gray;
-}
-#pelis img{
+
+.Peliculas img{
     width: 100%;
+}
+.infoPelis{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
 }
