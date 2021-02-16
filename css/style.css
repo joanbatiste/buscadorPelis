@@ -3,21 +3,52 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-
-.Peliculas {
-    width: 50em;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    grid-gap: 1em;
-}
-
-.Peliculas img{
-    width: 100%;
-}
-.infoPelis{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Ubuntu', sans-serif;
     font-size: small;
 }
+.header{
+    width: 100%;
+    height: 8em;
+    background: linear-gradient(to right, rgb(196, 194, 194), dimgray);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo{
+    width: 8em;
+    height: 8em;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+h1{
+    font-size: 6em;
+    color: grey;
+}
+.logo img{
+    width: 100%;
+}
+.links{
+    width: 30em;
+    height: 8em;
+    border: 0.1em solid red;
+}
+#contenedor {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 1em;
+}
+#peliculas{
+    justify-self: center;
+}
+#peliculas img{
+    width: 20em;
+    
+}
+

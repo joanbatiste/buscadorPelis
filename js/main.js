@@ -10,9 +10,8 @@ let recurso= "search";
 
 let criterio = "movie";
 
-
-
 let base_url = `http://api.themoviedb.org/3/`;
+
 
 const call = async (url) => {
     let res = await axios.get(url);
@@ -35,20 +34,21 @@ const pintar = async (coleccionPintar) => {
     
     // console.log(coleccionPintar);
     if (Array.isArray(coleccionPintar)) {
+        console.log(coleccionPintar);
         coleccionPintar.forEach(pelicula => {
-            divPelisDomElement.innerHTML += `<div class='Peliculas'>
-            <img src='https://image.tmdb.org/t/p/w500${pelicula.poster_path}' width='200px' class='Picture'>
-            </img></div><div class='infoPelis'><h2>${pelicula.title}</h2><p>${pelicula.overview}</p></div>`
+            divPelisDomElement.innerHTML += `<div id='peliculas'>
+            <img src='https://image.tmdb.org/t/p/w500${pelicula.poster_path}'></img></div>
+            <div id='textos'><h2>${pelicula.title}</h2>
+            <p>${pelicula.overview}</p>
+            </div>`
         });
     }
     
     if (coleccionPintar.original_title){
-        divPelisDomElement.innerHTML += `<div class='Peliculas'>
-            <img src='https://image.tmdb.org/t/p/w500${coleccionPintar.poster_path}' width='200px' class='Picture'>
+        divPelisDomElement.innerHTML += `<div class='peliculas'>
+            <img src='https://image.tmdb.org/t/p/w500${coleccionPintar.poster_path}' width='200px' class='picture'>
             </img></div><div class='infoPelis'><h2>${coleccionPintar.original_title}</h2><p>${coleccionPintar.overview}</p></div>`
-        console.log(coleccionPintar.poster_path);
-        console.log(coleccionPintar.overview);
-        console.log(coleccionPintar.original_title);
+        
     }
     return;
 };
@@ -58,7 +58,7 @@ const pintar = async (coleccionPintar) => {
 const buscador = async () => {
     let query = valor.value;
     //Construccion de la URL 
-    let url = `${base_url}${recurso}/${criterio}?api_key=${key}&query=${query}`; 
+    let url = `${base_url}${recurso}/${criterio}?api_key=${key}&language=es-ES&query=${query}`; 
     pintar("cargando");
     let pelis = await call(url);
 
@@ -71,7 +71,7 @@ const buscadorID = async () => {
     
     //Construccion de la URL 
     
-    let url = `${base_url}${criterio}/${query}?api_key=${key}`; 
+    let url = `${base_url}${criterio}/${query}?api_key=${key}&language=es-ES`; 
     pintar("cargando");
     let pelis = await call(url);
 
