@@ -10,7 +10,7 @@ let recurso= "search";
 
 let criterio = "movie";
 
-let base_url = `http://api.themoviedb.org/3/`;
+let base_url = `https://api.themoviedb.org/3/`;
 
 
 const call = async (url) => {

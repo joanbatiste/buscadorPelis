@@ -1,7 +1,7 @@
 let promise = axios.get('http://api.themoviedb.org/3/movie/popular?api_key=bb78e4cf3442e302d928f2c5edcdbee1')
 // Quiero una promesa de un array de pelis
 let pelisArrayPromise = promise.then((response) => response.genre_ids.results);
-console.log(pelisArrayPromise);
+
 
 // resultsPromise = promise.then(response => response.results);
 
@@ -20,4 +20,4 @@ const pintaLasPelis = (pelisCollection) => {
     });
 }
 
-pelisArrayPromise.then(console.log);
+pelisArrayPromise.then(pintaLasPelis);
