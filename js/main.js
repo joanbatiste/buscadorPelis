@@ -31,7 +31,7 @@ const call = async (url) => {
 const pintar = async (coleccionPintar) => {
     //Proceso para el pintado HTML de las películas
     const divPelisDomElement = document.getElementById("contenedor");
-    
+    divPelisDomElement.innerHTML = " ";
     // console.log(coleccionPintar);
     if (Array.isArray(coleccionPintar)) {
         console.log(coleccionPintar);
@@ -79,5 +79,20 @@ const buscadorID = async () => {
     pintar(pelis);
         
 };
+
+const busquedaGenero = async (value)=>{
+    let query = value;
+    if(value !="0"){
+        let url = `${base_url}discover/${criterio}?api_key=${key}&language=en-US&with_genres=${query}`
+    
+        let pelis = await call(url);
+        pintar(pelis);
+    }else{
+        const divPelisDomElement = document.getElementById("contenedor");
+        divPelisDomElement.innerHTML = " ";
+
+    }
+    
+}
 
 
